@@ -8,7 +8,7 @@
 
 module.exports = async () => {
   try {
-    // Todo: add config.exports
+    Config.Terminal = require("../configs/terminal");
   } catch (error) {
     // Виводимо помилку яка допущена була в експорті.
     console.error(`${'\x1b[31m'}[ERROR]${'\x1b[35m'} Configs:${'\x1b[0m'}`, error.message);
