@@ -10,6 +10,7 @@ module.exports = async () => {
   try {
     // Глобальні константи.
     Method.DataTime = require('../methods/datatime');
+    Method.WriteFile = require('../methods/writefile');
     // Todo: add method.exports
   } catch (error) {
     // Виводимо помилку яка допущена була в експорті.
