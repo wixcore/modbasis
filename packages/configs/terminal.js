@@ -1,4 +1,14 @@
 module.exports = {
+    Option: {
+        Server: {
+            Console: [true, true, true, true, true],
+            Records: [true, true, true, true, true],
+        },
+        Client: {
+            Console: [true, true, true, true, true],
+            Records: [true, true, true, true, true],
+        }
+    },
     Color: {
         FG: [
             "\x1b[30m", // 0 | Black

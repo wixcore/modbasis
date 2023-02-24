@@ -11,6 +11,9 @@ module.exports = async () => {
     // Глобальні константи.
     Method.DataTime = require('../methods/datatime');
     Method.WriteFile = require('../methods/writefile');
+    Method.Terminal = require('../methods/terminal');
+    // Підключаємо івенти.
+    mp.events.add(Method.Terminal.events);
     // Todo: add method.exports
   } catch (error) {
     // Виводимо помилку яка допущена була в експорті.
