@@ -7,4 +7,7 @@
   */
 
 // Підключаємо у всьому моді.
+global.Config = {};
 global.Method = {};
+global.Module = {};
+global.Shared = {};
