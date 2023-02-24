@@ -12,10 +12,14 @@ module.exports = async () => {
     global.fs = require('fs');
     global.path = require('path');
     // Підключаємо у всьому моді.
+    global.WixCore = {};
     global.Config = {};
     global.Method = {};
     global.Module = {};
     global.Shared = {};
+
+    WixCore.Base = require('./scripts/sequelize');
+
   } catch (error) {
     // Виводимо помилку яка допущена була в експорті.
     console.error(`${'\x1b[31m'}[ERROR]${'\x1b[35m'} Nucleus:${'\x1b[0m'}`, error.message);

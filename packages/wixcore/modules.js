@@ -8,7 +8,9 @@
 
 module.exports = async () => {
   try {
-    // Todo: add module.exports
+    await WixCore.Base.Connect(function () {
+      // Todo: add module.exports
+    });
   } catch (error) {
     // Виводимо помилку яка допущена була в експорті.
     console.error(`${'\x1b[31m'}[ERROR]${'\x1b[35m'} Modules:${'\x1b[0m'}`, error.message);
