@@ -6,4 +6,4 @@
   * @copyright Copyright (C) 2023 WixCore.Net
   */
 
-// Todo : Code for development.
+require('./game_resources/handlers/configs/bindkeys');
