@@ -8,8 +8,27 @@
 
 module.exports = async () => {
   try {
+    // Ініціалізація бази даних та запуск систем.
     await WixCore.Base.Connect(function () {
-      // Todo: add module.exports
+      // Читання папки із системами (../modules/*.js).
+      fs.readdirSync(path.dirname(__dirname) + '\\modules\\').forEach(module => {
+        // Змінна каталог систем для зручності.
+        var catalog = path.dirname(__dirname) + '\\modules\\' + module;
+        // Ігноруємо модулі, які не виконує.
+        if (!Config.Modules['ignore'].includes(module)) {
+          // Перевірка існування файлу.
+          if (fs.existsSync(catalog + "\\init.js")) {
+            // Виконати код з index.js
+            require('..\\' + '\\modules\\' + module + '\\init.js')();
+          };
+          // Перевірка існування файлу.
+          if (fs.existsSync(catalog + "\\events.js")) {
+            // Виконати код з events.js
+            var events = require(catalog + '\\events');
+            mp.events.add(events);
+          };
+        };
+      })
     });
   } catch (error) {
     // Виводимо помилку яка допущена була в експорті.
